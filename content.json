@@ -1,0 +1,130 @@
+{
+    "site": {
+        "title": "Wenjie Xu - Personal Website",
+        "author": "徐文杰",
+        "favicon": {
+            "ico": "https://xwj770427414.oss-cn-beijing.aliyuncs.com/img/favicon.ico",
+            "appleTouchIcon": "https://xwj770427414.oss-cn-beijing.aliyuncs.com/img/apple-touch-icon.png"
+        }
+    },
+    "header": {
+        "avatar": "https://xwj770427414.oss-cn-beijing.aliyuncs.com/img/prof_pic.jpg",
+        "name": "徐文杰"
+    },
+    "hero": {
+        "subtitle": "WENJIE XU",
+        "title": "保持好奇<br />也保持自在",
+        "description": "Join us and witness every step as a one-person company grows from chaos to clarity — with <span class=\"underline\">MDFriday</span> as the engine behind it.",
+        "cta": "Get free weekly letters."
+    },
+    "portfolio": {
+        "title": "Portfolio",
+        "items": [
+            {
+                "id": "mdfriday",
+                "title": "MDFriday",
+                "image": "https://picsum.photos/seed/mdfriday/600/350.jpg",
+                "url": "#",
+                "type": "image"
+            },
+            {
+                "id": "book",
+                "title": "Book",
+                "image": null,
+                "url": "#",
+                "type": "colorful",
+                "colors": [
+                    "bg-purple-800",
+                    "bg-black",
+                    "bg-green-700",
+                    "bg-red-800",
+                    "bg-orange-500"
+                ]
+            }
+        ]
+    },
+    "featuredPosts": {
+        "title": "Featured Posts",
+        "items": [
+            {
+                "id": "how-mdfriday-works",
+                "title": "How MDFriday Works?",
+                "image": "https://picsum.photos/seed/chart123/600/350.jpg",
+                "url": "#",
+                "overlayColor": "bg-black",
+                "overlayOpacity": "bg-opacity-70"
+            },
+            {
+                "id": "about-mdfriday",
+                "title": "About MDFriday",
+                "image": "https://picsum.photos/seed/about456/600/350.jpg",
+                "url": "#",
+                "overlayColor": "bg-yellow-500",
+                "overlayOpacity": "bg-opacity-80"
+            },
+            {
+                "id": "markdown-syntax",
+                "title": "Markdown Syntax Guide",
+                "image": "https://picsum.photos/seed/markdown789/600/350.jpg",
+                "url": "#",
+                "overlayColor": "bg-blue-900",
+                "overlayOpacity": "bg-opacity-80"
+            },
+            {
+                "id": "math-typesetting",
+                "title": "Math Typesetting - use Mathematical notation in blog posts",
+                "image": "https://picsum.photos/seed/math101/600/350.jpg",
+                "url": "#",
+                "overlayColor": "bg-black",
+                "overlayOpacity": "bg-opacity-80"
+            },
+            {
+                "id": "rich-content",
+                "title": "Rich Content",
+                "image": "https://picsum.photos/seed/richcontent202/600/350.jpg",
+                "url": "#",
+                "overlayColor": "bg-black",
+                "overlayOpacity": "bg-opacity-80"
+            }
+        ],
+        "seeAllText": "See All Posts",
+        "seeAllUrl": "#"
+    },
+    "footer": {
+        "copyright": "© 2025 All Rights Reserved. 备案号: 待添加",
+        "socialLinks": [
+            {
+                "icon": "fas fa-globe",
+                "url": "https://waynexucn.github.io/",
+                "title": "个人网站"
+            },
+            {
+                "icon": "far fa-envelope",
+                "url": "mailto:wenjie.xu.cn@outlook.com",
+                "title": "邮箱"
+            },
+            {
+                "icon": "fab fa-github",
+                "url": "https://github.com/WayneXuCN",
+                "title": "GitHub"
+            },
+            {
+                "icon": "fab fa-weibo",
+                "url": "https://weibo.com/u/6577473146",
+                "title": "微博"
+            },
+            {
+                "icon": "fab fa-zhihu",
+                "imageUrl": "https://xwj770427414.oss-cn-beijing.aliyuncs.com/img/zhihu.svg",
+                "url": "#",
+                "title": "知乎"
+            },
+            {
+                "icon": "fab fa-bilibili",
+                "imageUrl": "https://xwj770427414.oss-cn-beijing.aliyuncs.com/img/bilibili.svg",
+                "url": "#",
+                "title": "哔哩哔哩"
+            }
+        ]
+    }
+}
