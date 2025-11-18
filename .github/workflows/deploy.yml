@@ -28,14 +28,22 @@ jobs:
             set -e  # 遇到错误立即退出
             cd /opt/1panel/apps/openresty/openresty/www/sites/wenjiexusite/index
 
-            # 备份当前版本（可选）
-            git stash push -m "backup-before-deploy-$(date +%Y%m%d_%H%M%S)" || true
-
+            # 设置代理加速
+            git remote set-url origin https://gh.xmly.dev/https://github.com/WayneXuCN/homepage
+            
             # 拉取最新代码
             git config --global --add safe.directory "$(pwd)"
             git fetch --all --depth=1
             git reset --hard origin/main
             git pull --depth=1
 
+            # 安装依赖并构建
+            npm ci
+            npm run build
+
+            # 设置文件权限为 PHP-FPM 用户
+            chown -R 1000:1000 .
+
             echo "✅ 已成功拉取 main 分支最新内容"
+            echo "✅ 文件权限已设置为 1000:1000"
             echo "🚀 部署完成时间: $(date)"

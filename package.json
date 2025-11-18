@@ -1,0 +1,37 @@
+{
+  "name": "homepage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "build:css": "cross-env BROWSERSLIST_IGNORE_OLD_DATA=1 tailwindcss -i ./src/styles/main.css -o ./assets/css/main.css --minify",
+    "watch:css": "cross-env BROWSERSLIST_IGNORE_OLD_DATA=1 tailwindcss -i ./src/styles/main.css -o ./assets/css/main.css --watch",
+    "build:js": "esbuild src/main.jsx --bundle --sourcemap --minify --loader:.jsx=jsx --outfile=assets/js/app.bundle.js",
+    "watch:js": "esbuild src/main.jsx --bundle --sourcemap --loader:.jsx=jsx --outfile=assets/js/app.bundle.js --watch",
+    "build": "npm-run-all build:css build:js",
+    "dev": "npm-run-all --parallel watch:css watch:js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WayneXuCN/homepage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/WayneXuCN/homepage/issues"
+  },
+  "homepage": "https://github.com/WayneXuCN/homepage#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "cross-env": "^10.1.0",
+    "esbuild": "^0.27.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwindcss": "^3.4.18"
+  }
+}
