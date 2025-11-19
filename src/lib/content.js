@@ -23,7 +23,7 @@ export const DEFAULT_CONTENT = {
     subtitle: 'WENJIE XU',
     title: '保持好奇 也保持自在',
     description:
-      'Join us and witness every step as a one-person company grows from chaos to clarity — with <span class="underline">MDFriday</span> as the engine behind it.',
+      "Collaborating with diverse people is something I truly enjoy.<br />If you want to <a href=\"mailto:wenjie.xu.cn@outlook.com\" class=\"underline\">contact me</a>, I'll be happy to connect!",
   },
   websites: {
     title: 'Websites',

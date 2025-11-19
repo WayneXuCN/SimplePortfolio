@@ -28,10 +28,10 @@
         "description": "关于我的更多信息"
       },
       {
-        "id": "mdfriday",
-        "title": "MDFriday",
+        "id": "MyWork",
+        "title": "MyWork",
         "subtitle": "Markdown编辑器",
-        "image": "https://picsum.photos/seed/mdfriday/600/350.jpg",
+        "image": "https://picsum.photos/seed/MyWork/600/350.jpg",
         "url": "#",
         "description": "轻量级的Markdown编辑工具"
       },
@@ -57,20 +57,20 @@
     "title": "Featured Posts",
     "items": [
       {
-        "id": "how-mdfriday-works",
-        "title": "How MDFriday Works?",
+        "id": "how-MyWork-works",
+        "title": "How MyWork Works?",
         "image": "https://picsum.photos/seed/chart123/600/350.jpg",
         "url": "#",
-        "description": "深入了解MDFriday的工作原理和设计理念",
+        "description": "深入了解MyWork的工作原理和设计理念",
         "overlayColor": "bg-black",
         "overlayOpacity": "bg-opacity-70"
       },
       {
-        "id": "about-mdfriday",
-        "title": "About MDFriday",
+        "id": "about-MyWork",
+        "title": "About MyWork",
         "image": "https://picsum.photos/seed/about456/600/350.jpg",
         "url": "#",
-        "description": "MDFriday的故事和使命",
+        "description": "MyWork的故事和使命",
         "overlayColor": "bg-yellow-500",
         "overlayOpacity": "bg-opacity-80"
       },
@@ -144,7 +144,7 @@
         {
           "period": "NOW",
           "title": "一人公司实验 · Content x SaaS",
-          "description": "围绕 MDFriday、知识型产品和咨询项目，搭建自驱增长的业务组合。每一个版本都在验证：小而美的工具是否能成为创作者的倍增器。"
+          "description": "围绕 MyWork、知识型产品和咨询项目，搭建自驱增长的业务组合。每一个版本都在验证：小而美的工具是否能成为创作者的倍增器。"
         },
         {
           "period": "2019 - 2023",
@@ -176,7 +176,7 @@
         }
       ],
       "product": {
-        "subtitle": "MDFriday",
+        "subtitle": "MyWork",
         "title": "为什么要做一款新的 Markdown 编辑器？",
         "description": "它是创作者的「第二大脑控台」。我想把语法提示、结构指引、资产管理整合在一个清爽的界面里，让创作像调色一样自由。",
         "linkText": "查看最新版本",
@@ -201,22 +201,28 @@
       "email": {
         "subtitle": "EMAIL",
         "address": "wenjie.xu.cn@outlook.com",
-        "note": "24小时内回复，若超出时间范围会先发送进度更新。"
+        "note": "无论是项目合作、技术探讨，还是简单的问候，都欢迎随时来信。"
       },
       "social": {
         "subtitle": "SOCIAL",
         "items": [
           {
             "label": "GitHub",
-            "url": "https://github.com/WayneXuCN"
+            "url": "https://github.com/WayneXuCN",
+            "icon": "fab fa-github",
+            "handle": "@WayneXuCN"
           },
           {
             "label": "Weibo",
-            "url": "https://weibo.com/u/6577473146"
+            "url": "https://weibo.com/u/6577473146",
+            "icon": "fab fa-weibo",
+            "handle": "@WayneXuCN"
           },
           {
             "label": "Personal Site",
-            "url": "https://waynexucn.github.io/"
+            "url": "https://waynexucn.github.io/",
+            "icon": "fas fa-globe",
+            "handle": "waynexucn.github.io"
           }
         ]
       }
@@ -240,7 +246,7 @@
         },
         {
           "subtitle": "TOOLS",
-          "title": "MDFriday",
+          "title": "MyWork",
           "description": "如果你想为创作工具提供建议，我会第一时间优先处理。"
         }
       ]

@@ -9,6 +9,14 @@ const Contact = ({ content }) => {
   const { hero, cards, form: formContent, services } = contact;
   const form = useRef();
   const [status, setStatus] = useState('idle'); // idle, sending, success, error
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(cards.email.address);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -55,32 +63,86 @@ const Contact = ({ content }) => {
       />
 
       <section className="mb-12 sm:mb-16 md:mb-20 grid md:grid-cols-2 gap-8">
-        <div className="p-6 border border-gray-200 rounded-3xl card-hover text-center md:text-left">
-          <p className="text-xs uppercase tracking-[0.4em] text-gray-400 mb-2">
-            {cards.email.subtitle}
-          </p>
-          <a
-            href={`mailto:${cards.email.address}`}
-            className="text-2xl font-semibold underline break-all"
-          >
-            {cards.email.address}
-          </a>
-          <p className="text-sm text-gray-500 mt-3">{cards.email.note}</p>
+        <div className="p-8 border border-gray-200 rounded-3xl card-hover flex flex-col justify-between h-full group bg-white relative overflow-hidden">
+          {/* 装饰背景 Icon */}
+          <div className="absolute -right-6 -top-6 text-9xl text-gray-50 opacity-50 group-hover:opacity-100 group-hover:text-gray-100 transition-all duration-500 pointer-events-none select-none">
+            <i className="far fa-envelope"></i>
+          </div>
+
+          <div className="relative z-10">
+            <div className="flex justify-between items-center mb-8">
+              <p className="text-xs uppercase tracking-[0.4em] text-gray-400">
+                {cards.email.subtitle}
+              </p>
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-green-50 text-green-600 text-xs font-medium border border-green-100">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+                Open to Connect
+              </span>
+            </div>
+
+            <div className="mb-6">
+              <h3 className="text-2xl sm:text-3xl font-semibold break-all mb-3 text-gray-900">
+                {cards.email.address.split('@')[0]}
+                <span className="text-gray-300">@</span>
+                {cards.email.address.split('@')[1]}
+              </h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                {cards.email.note}
+              </p>
+            </div>
+          </div>
+
+          <div className="relative z-10 flex items-center gap-3 pt-6 border-t border-gray-100">
+            <a
+              href={`mailto:${cards.email.address}`}
+              className="flex-1 bg-black text-white text-center py-3 rounded-xl text-sm font-medium hover:bg-gray-800 transition-colors shadow-sm hover:shadow-md"
+            >
+              写邮件
+            </a>
+            <button
+              onClick={handleCopyEmail}
+              className="flex-1 bg-white text-gray-700 text-center py-3 rounded-xl text-sm font-medium hover:bg-gray-50 transition-colors border border-gray-200 hover:border-gray-300"
+            >
+              {copied ? (
+                <span className="text-green-600">
+                  <i className="fas fa-check mr-2"></i>已复制
+                </span>
+              ) : (
+                <span>
+                  <i className="far fa-copy mr-2"></i>复制
+                </span>
+              )}
+            </button>
+          </div>
         </div>
-        <div className="p-6 border border-gray-200 rounded-3xl card-hover text-center md:text-left">
-          <p className="text-xs uppercase tracking-[0.4em] text-gray-400 mb-2">
+
+        <div className="p-8 border border-gray-200 rounded-3xl card-hover bg-white">
+          <p className="text-xs uppercase tracking-[0.4em] text-gray-400 mb-6">
             {cards.social.subtitle}
           </p>
-          <ul className="space-y-2 text-gray-700">
+          <ul className="space-y-3">
             {cards.social.items.map((item) => (
               <li key={item.label}>
                 <a
-                  className="underline"
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="flex items-center justify-between p-3 -mx-3 rounded-2xl hover:bg-gray-50 transition-all duration-300 group"
                 >
-                  {item.label}
+                  <div className="flex items-center space-x-4">
+                    <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-white group-hover:shadow-sm transition-all border border-transparent group-hover:border-gray-100">
+                      <i
+                        className={`${item.icon || 'fas fa-link'} text-lg text-gray-600 group-hover:text-black transition-colors`}
+                      ></i>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900">{item.label}</h4>
+                      {item.handle && (
+                        <p className="text-xs text-gray-500">{item.handle}</p>
+                      )}
+                    </div>
+                  </div>
+                  <i className="fas fa-arrow-up-right-from-square text-gray-300 text-sm group-hover:text-black transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"></i>
                 </a>
               </li>
             ))}

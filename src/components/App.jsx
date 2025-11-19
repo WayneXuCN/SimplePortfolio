@@ -19,7 +19,7 @@ const Home = ({ content }) => {
   const { header, hero, websites, featuredPosts, footer } = content;
 
   return (
-    <div className="max-w-[90vw] mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
+    <div className="max-w-[90vw] mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16 animate-fade-in">
       <HeaderBar header={header} />
 
       <Hero
