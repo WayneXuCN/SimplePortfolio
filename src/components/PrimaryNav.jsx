@@ -20,21 +20,27 @@ const PrimaryNav = () => {
   };
 
   return (
-    <nav className="flex flex-wrap items-center gap-8 text-base font-medium text-gray-600">
+    <nav className="flex flex-wrap items-center gap-8 text-base font-medium text-gray-600 dark:text-gray-300">
       {navLinks.map((link, index) => {
         const active = isActive(link.href);
         return (
           <React.Fragment key={link.href}>
-            {index > 0 && <span className="text-gray-300 select-none">/</span>}
+            {index > 0 && (
+              <span className="text-gray-300 dark:text-gray-600 select-none">
+                /
+              </span>
+            )}
             <a
               href={link.href}
               className={`relative group transition-colors py-1 ${
-                active ? 'text-black font-bold' : 'hover:text-black'
+                active
+                  ? 'text-black dark:text-white font-bold'
+                  : 'hover:text-black dark:hover:text-white'
               }`}
             >
               {link.label}
               <span
-                className={`absolute bottom-0 left-0 h-[2px] bg-black transition-all duration-300 ease-out ${
+                className={`absolute bottom-0 left-0 h-[2px] bg-black dark:bg-white transition-all duration-300 ease-out ${
                   active ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}
               ></span>

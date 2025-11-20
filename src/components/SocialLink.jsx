@@ -3,7 +3,7 @@ import React from 'react';
 const SocialLink = ({ link }) => (
   <a
     href={link.url}
-    className="text-gray-600 hover:text-gray-900 transition-colors social-icon text-xl"
+    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors social-icon text-xl"
     title={link.title || ''}
     target="_blank"
     rel="noopener noreferrer"

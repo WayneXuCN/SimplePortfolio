@@ -9,10 +9,11 @@ import Contact from './Contact.jsx';
 import { applyFavicon } from '../lib/favicon.js';
 import { loadSiteContent } from '../lib/content.js';
 import { LanguageProvider, useLanguage } from '../lib/LanguageContext.jsx';
+import { ThemeProvider } from '../lib/ThemeContext.jsx';
 import { updateMetaTags } from '../lib/seo.js';
 
 const LoadingState = () => (
-  <div className="flex justify-center items-center h-screen text-gray-600">
+  <div className="flex justify-center items-center h-screen text-gray-600 dark:text-gray-400">
     内容加载中...
   </div>
 );
@@ -61,9 +62,9 @@ const Home = ({ content }) => {
         </div>
       </section>
 
-      <footer className="pt-12 sm:pt-16 pb-6 sm:pb-8 border-t border-gray-200">
+      <footer className="pt-12 sm:pt-16 pb-6 sm:pb-8 border-t border-gray-200 dark:border-gray-800">
         <div className="flex justify-between items-center flex-col md:flex-row gap-6 md:gap-0">
-          <p className="text-gray-600 text-base sm:text-lg text-center md:text-left">
+          <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg text-center md:text-left">
             {footer.copyright}
           </p>
           <div className="flex space-x-4 sm:space-x-6">
@@ -107,13 +108,16 @@ const MainContent = () => {
 };
 
 const App = () => {
+  console.log('App component rendering...');
   const [fullContent, setFullContent] = React.useState(null);
 
   React.useEffect(() => {
     let isMounted = true;
 
     const bootstrap = async () => {
+      console.log('Bootstrapping content...');
       const safeContent = await loadSiteContent();
+      console.log('Content loaded:', safeContent ? 'success' : 'failed');
       if (!isMounted) return;
       setFullContent(safeContent);
     };
@@ -126,12 +130,16 @@ const App = () => {
   }, []);
 
   if (!fullContent) {
+    console.log('Content not ready, showing loading state');
     return <LoadingState />;
   }
 
+  console.log('Content ready, rendering providers');
   return (
     <LanguageProvider content={fullContent}>
-      <MainContent />
+      <ThemeProvider>
+        <MainContent />
+      </ThemeProvider>
     </LanguageProvider>
   );
 };

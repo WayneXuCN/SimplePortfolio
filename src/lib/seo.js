@@ -43,10 +43,10 @@ export const updateMetaTags = (siteConfig, lang) => {
   updateOgMeta('og:title', siteConfig.title);
   updateOgMeta('og:description', siteConfig.description);
   updateOgMeta('og:locale', lang === 'zh' ? 'zh_CN' : 'en_US');
-  
+
   // If there's an image for sharing (e.g. avatar or a specific share image)
   // We can use the avatar as a fallback for now if no specific share image is defined
   if (siteConfig.favicon?.appleTouchIcon) {
-     updateOgMeta('og:image', siteConfig.favicon.appleTouchIcon);
+    updateOgMeta('og:image', siteConfig.favicon.appleTouchIcon);
   }
 };

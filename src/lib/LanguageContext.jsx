@@ -14,18 +14,23 @@ export const LanguageProvider = ({ children, content }) => {
   const [language, setLanguage] = useState('zh');
 
   useEffect(() => {
-    // Check localStorage first
-    const savedLang = localStorage.getItem('language');
-    if (savedLang) {
-      setLanguage(savedLang);
-      return;
-    }
+    try {
+      // Check localStorage first
+      const savedLang = localStorage.getItem('language');
+      if (savedLang) {
+        setLanguage(savedLang);
+        return;
+      }
 
-    // Detect browser language
-    const browserLang = navigator.language || navigator.userLanguage;
-    if (browserLang.toLowerCase().startsWith('en')) {
-      setLanguage('en');
-    } else {
+      // Detect browser language
+      const browserLang = navigator.language || navigator.userLanguage;
+      if (browserLang && browserLang.toLowerCase().startsWith('en')) {
+        setLanguage('en');
+      } else {
+        setLanguage('zh');
+      }
+    } catch (e) {
+      console.warn('Failed to access localStorage or navigator:', e);
       setLanguage('zh');
     }
   }, []);
@@ -35,7 +40,11 @@ export const LanguageProvider = ({ children, content }) => {
   const toggleLanguage = () => {
     setLanguage((prev) => {
       const newLang = prev === 'zh' ? 'en' : 'zh';
-      localStorage.setItem('language', newLang);
+      try {
+        localStorage.setItem('language', newLang);
+      } catch (e) {
+        console.warn('Failed to save language to localStorage:', e);
+      }
       return newLang;
     });
   };
