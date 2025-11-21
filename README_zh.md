@@ -1,18 +1,14 @@
-# 徐文杰 - 个人作品集
+# Simple Portfolio
 
 [English](README.md) | [中文](README_zh.md)
 
-一个简单的、响应式的个人作品集网站，使用 **Next.js** 和 **Tailwind CSS** 构建。
+一个简单的、响应式的个人网站，使用 **Next.js** 和 **Tailwind CSS** 构建。
 
-## 🚀 技术栈
+## 预览
 
-- **框架**: [Next.js 16+](https://nextjs.org/) (App Router)
-- **样式**: [Tailwind CSS](https://tailwindcss.com/)
-- **图标**: [Font Awesome](https://fontawesome.com/)
-- **部署**: 静态导出 (`next build` + `output: export`)
-- **邮件**: [EmailJS](https://www.emailjs.com/)
+![网站预览](public/assets/img/website.png)
 
-## 📂 项目结构
+## 项目结构
 
 ```text
 src/
@@ -42,7 +38,7 @@ src/
 └── styles/              # 额外样式
 ```
 
-## 🛠️ 开发
+## 开发
 
 1. **安装依赖**:
 
@@ -58,7 +54,7 @@ src/
 
    在浏览器中打开 [http://localhost:3000](http://localhost:3000) 查看。
 
-## 📦 构建与部署
+## 构建与部署
 
 创建生产构建（静态导出）：
 
@@ -68,7 +64,7 @@ npm run build
 
 静态文件将生成在 `out/` 目录中。
 
-## 📝 配置
+## 配置
 
 - **内容**: 编辑 `src/locales/` 目录下的文件 (`zh.json`, `en.json`) 来更新网站内容（文本、链接、图片）。
 - **环境变量**:
@@ -80,6 +76,6 @@ npm run build
   - Google Analytics (可选):
     - `NEXT_PUBLIC_GA_ID` (例如: `G-XXXXXXXXXX`)
 
-## 📄 许可证
+## 许可证
 
 本项目采用 MIT 许可证。详情请参阅 [LICENSE](LICENSE) 文件。

@@ -5,8 +5,8 @@
         "description": "Wenjie Xu's Homepage. Ph.D. Candidate at Institutes of Science and Development, CAS. Focusing on Critical Infrastructure Risk Management and System Resilience.",
         "keywords": "Wenjie Xu, Ph.D. Candidate, Risk Management, Critical Infrastructure, System Resilience, Decision Analysis, CAS, ISD",
         "favicon": {
-            "ico": "https://xwj770427414.oss-cn-beijing.aliyuncs.com/img/favicon.ico",
-            "appleTouchIcon": "https://xwj770427414.oss-cn-beijing.aliyuncs.com/img/prof_pic.jpg"
+            "ico": "assets/img/favicon.ico",
+            "appleTouchIcon": "assets/img/apple-touch-icon.png"
         }
     },
     "nav": [
@@ -26,7 +26,7 @@
         }
     ],
     "header": {
-        "avatar": "https://xwj770427414.oss-cn-beijing.aliyuncs.com/img/prof_pic.jpg",
+        "avatar": "assets/img/prof_pic.png",
         "name": "Wenjie Xu"
     },
     "hero": {

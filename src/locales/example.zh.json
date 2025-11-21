@@ -17,7 +17,7 @@
         {
             "label": "关于",
             "href": "about.html",
-            "hidden": true
+            "hidden": false
         },
         {
             "label": "联系",
@@ -31,7 +31,7 @@
     },
     "hero": {
         "subtitle": "EFFICIENCY STUDIO",
-        "title": "保持专注<br class=\"sm:hidden\"> 保持克制",
+        "title": "<span class=\"inline-block\">保持好奇</span> <span class=\"inline-block\">保持自在</span>",
         "description": "与擅长的人一起，把想法变成可复用的系统。<br>如果你有项目或灵感，欢迎从 <a href=\"contact.html\" class=\"underline\">这里</a> 开始谈起。"
     },
     "websites": {
@@ -212,7 +212,7 @@
     "contact": {
         "hero": {
             "subtitle": "LET'S COLLAB",
-            "title": "保持对话，让想法落地",
+            "title": "<span class=\"inline-block\">保持对话</span> <span class=\"inline-block\">思想碰撞</span>",
             "description": "无论是业务合作、产品咨询，还是内容共创，都可以从这里发起。"
         },
         "cards": {

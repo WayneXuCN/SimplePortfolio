@@ -9,7 +9,11 @@ const HeaderBar = ({ header }) => (
   <header className='flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-12 sm:mb-16 md:mb-20 animate-fade-in'>
     <div className='flex items-center'>
       <Image
-        src={header.avatar}
+        src={
+          header.avatar.includes('aliyuncs.com') && !header.avatar.includes('x-oss-process')
+            ? `${header.avatar}?x-oss-process=image/resize,w_112`
+            : header.avatar
+        }
         alt={header.name}
         width={56}
         height={56}

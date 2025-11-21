@@ -1,18 +1,28 @@
-# Wenjie Xu - Personal Portfolio
+# Simple Portfolio
 
 [English](README.md) | [中文](README_zh.md)
 
 A simple, responsive personal portfolio website built with **Next.js** and **Tailwind CSS**.
 
-## 🚀 Tech Stack
+## Preview
 
-- **Framework**: [Next.js 16+](https://nextjs.org/) (App Router)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Icons**: [Font Awesome](https://fontawesome.com/)
-- **Deployment**: Static Export (`next build` + `output: export`)
-- **Email**: [EmailJS](https://www.emailjs.com/)
+![Website Preview](public/assets/img/website.png)
 
-## 📂 Project Structure
+## Lighthouse PageSpeed Insights
+
+### Desktop
+
+[![Google Lighthouse PageSpeed Insights](public/assets/img/desktop_pagespeed.png)](https://pagespeed.web.dev/analysis/https-www-wenjiexu-site/b7dpi427wf?form_factor=desktop)
+
+Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.web.dev/analysis/https-www-wenjiexu-site/b7dpi427wf?form_factor=desktop)
+
+### Mobile
+
+[![Google Lighthouse PageSpeed Insights](public/assets/img/mobile_pagespeed.png)](https://pagespeed.web.dev/analysis/https-www-wenjiexu-site/b7dpi427wf?form_factor=mobile)
+
+Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.web.dev/analysis/https-www-wenjiexu-site/b7dpi427wf?form_factor=mobile)
+
+## Project Structure
 
 ```text
 src/
@@ -42,7 +52,7 @@ src/
 └── styles/              # Additional styles
 ```
 
-## 🛠️ Development
+## Development
 
 1. **Install dependencies**:
 
@@ -58,7 +68,7 @@ src/
 
    Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## 📦 Build & Deploy
+## Build & Deploy
 
 To create a production build (static export):
 
@@ -68,7 +78,7 @@ npm run build
 
 The static files will be generated in the `out/` directory.
 
-## 📝 Configuration
+## Configuration
 
 - **Content**: Edit files in `src/locales/` (`zh.json`, `en.json`) to update site content (text, links, images).
 - **Environment Variables**:
@@ -80,6 +90,6 @@ The static files will be generated in the `out/` directory.
   - Optional for Google Analytics:
     - `NEXT_PUBLIC_GA_ID` (e.g., `G-XXXXXXXXXX`)
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

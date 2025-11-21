@@ -17,8 +17,8 @@ const Home = ({ content }) => {
           {websites.title}
         </h2>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8'>
-          {websites.items.map(item => (
-            <WebsiteItem key={item.id || item.title} item={item} />
+          {websites.items.map((item, index) => (
+            <WebsiteItem key={item.id || item.title} item={item} priority={index === 0} />
           ))}
         </div>
       </section>

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 import { resolveContentHref } from '../../lib/urlUtils.js';
 
-const WebsiteItem = ({ item }) => (
+const WebsiteItem = ({ item, priority = false }) => (
   <a
     href={resolveContentHref(item.url)}
     target='_blank'
@@ -16,6 +16,7 @@ const WebsiteItem = ({ item }) => (
         src={item.image}
         alt={item.title}
         fill
+        priority={priority}
         className='object-cover'
         sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw'
       />
@@ -39,6 +40,7 @@ WebsiteItem.propTypes = {
     url: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
   }).isRequired,
+  priority: PropTypes.bool,
 };
 
 export default React.memo(WebsiteItem);
