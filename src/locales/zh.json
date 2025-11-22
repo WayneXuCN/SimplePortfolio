@@ -5,8 +5,8 @@
         "description": "徐文杰的主页。中国科学院科技战略咨询研究院博士生，关注关键基础设施风险管理与系统韧性。",
         "keywords": "徐文杰, 博士生, 风险管理, 关键基础设施, 系统韧性, 决策分析, 中国科学院, CAS",
         "favicon": {
-            "ico": "assets/img/favicon.ico",
-            "appleTouchIcon": "assets/img/apple-touch-icon.png"
+            "ico": "/assets/img/favicon.ico",
+            "appleTouchIcon": "/assets/img/apple-touch-icon.png"
         }
     },
     "nav": [
@@ -17,7 +17,7 @@
         {
             "label": "关于",
             "href": "about.html",
-            "hidden": true
+            "hidden": false
         },
         {
             "label": "联系",
@@ -26,7 +26,7 @@
         }
     ],
     "header": {
-        "avatar": "assets/img/prof_pic.png",
+        "avatar": "/assets/img/prof_pic.png",
         "name": "徐文杰"
     },
     "hero": {
@@ -124,7 +124,16 @@
         "seeAllUrl": "#"
     },
     "footer": {
-        "copyright": "© 2025 徐文杰. 版权所有. 备案号: 苏ICP备2025220926号",
+        "copyright": "© {startYear}-{currentYear} 徐文杰. 版权所有.",
+        "icp": {
+            "text": "苏ICP备2025220926号-1",
+            "url": "https://beian.miit.gov.cn/"
+        },
+        "mps": {
+            "text": "京公网安备11010802046735号",
+            "url": "https://beian.mps.gov.cn/",
+            "logo": "https://beian.mps.gov.cn/web/assets/logo01.6189a29f.png"
+        },
         "socialLinks": [
             {
                 "icon": "fas fa-globe",

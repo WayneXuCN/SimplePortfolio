@@ -44,3 +44,6 @@ yarn-error.log*
 # Next.js 编译和缓存文件
 .next/
 out/
+
+# Agent instructions
+CLAUDE.md

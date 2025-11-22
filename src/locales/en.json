@@ -5,8 +5,8 @@
         "description": "Wenjie Xu's Homepage. Ph.D. Candidate at Institutes of Science and Development, CAS. Focusing on Critical Infrastructure Risk Management and System Resilience.",
         "keywords": "Wenjie Xu, Ph.D. Candidate, Risk Management, Critical Infrastructure, System Resilience, Decision Analysis, CAS, ISD",
         "favicon": {
-            "ico": "assets/img/favicon.ico",
-            "appleTouchIcon": "assets/img/apple-touch-icon.png"
+            "ico": "/assets/img/favicon.ico",
+            "appleTouchIcon": "/assets/img/apple-touch-icon.png"
         }
     },
     "nav": [
@@ -17,7 +17,7 @@
         {
             "label": "About",
             "href": "about.html",
-            "hidden": true
+            "hidden": false
         },
         {
             "label": "Contact",
@@ -26,7 +26,7 @@
         }
     ],
     "header": {
-        "avatar": "assets/img/prof_pic.png",
+        "avatar": "/assets/img/prof_pic.png",
         "name": "Wenjie Xu"
     },
     "hero": {
@@ -124,7 +124,16 @@
         "seeAllUrl": "#"
     },
     "footer": {
-        "copyright": "© 2025 Wenjie Xu. All Rights Reserved. ICP: 苏ICP备2025220926号",
+        "copyright": "© {startYear}-{currentYear} Wenjie Xu. All Rights Reserved.",
+        "icp": {
+            "text": "苏ICP备2025220926号",
+            "url": "https://beian.miit.gov.cn/"
+        },
+        "mps": {
+            "text": "京公网安备11010802046735号",
+            "url": "https://beian.mps.gov.cn/",
+            "logo": "https://beian.mps.gov.cn/web/assets/logo01.6189a29f.png"
+        },
         "socialLinks": [
             {
                 "icon": "fas fa-globe",

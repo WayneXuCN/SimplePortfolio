@@ -124,3 +124,72 @@ body {
 .featured-post-item:hover .card-overlay {
   background-color: rgba(0, 0, 0, 0.7);
 }
+
+/* 备案信息样式 */
+.icp-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icp-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .icp-links {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+.icp-link {
+  color: #6b7280;
+  font-size: 0.75rem;
+  transition: color 0.2s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.icp-link:hover {
+  color: #374151;
+}
+
+@media (prefers-color-scheme: dark) {
+  .icp-link {
+    color: #9ca3af;
+  }
+
+  .icp-link:hover {
+    color: #d1d5db;
+  }
+}
+
+.mps-logo {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+}
+
+@media (min-width: 640px) {
+  .mps-logo {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* 社交图标样式 */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: all 0.2s ease;
+}
