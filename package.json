@@ -7,6 +7,8 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
+        "fetch:rss": "node scripts/fetch-rss.js",
+        "prebuild": "node scripts/fetch-rss.js || true",
         "format": "prettier --write '**/*.{js,jsx,json,css,html}'",
         "format:check": "prettier --check '**/*.{js,jsx,json,css,html}'"
     },

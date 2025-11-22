@@ -1,0 +1,102 @@
+{
+    "zh": [
+        {
+            "id": "rss-zh-0-47dc44d8",
+            "title": "macOS 系统配置记录",
+            "description": "macOS 系统软件配置和常见错误解决方案的记录...",
+            "url": "https://waynexucn.github.io//blog/2025/Mac%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/",
+            "image": "https://picsum.photos/seed/a05e2e20/600/350",
+            "pubDate": "2025-02-16T17:05:53.000Z",
+            "categories": ["Tools", "macOS", "Configuration"],
+            "overlayColor": "bg-black",
+            "overlayOpacity": "bg-opacity-70",
+            "isRSS": true
+        },
+        {
+            "id": "rss-zh-1-7b04e3e7",
+            "title": "低性能云服务器实用配置记录",
+            "description": "配置云服务器记录...",
+            "url": "https://waynexucn.github.io//blog/2025/%E4%BD%8E%E9%85%8D%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/",
+            "image": "https://picsum.photos/seed/45119285/600/350",
+            "pubDate": "2025-02-12T17:05:53.000Z",
+            "categories": ["Tools", "Server", "Configuration"],
+            "overlayColor": "bg-black",
+            "overlayOpacity": "bg-opacity-70",
+            "isRSS": true
+        },
+        {
+            "id": "rss-zh-2-af98a35e",
+            "title": "「随笔」旧居记忆",
+            "description": "闲言碎语...",
+            "url": "https://waynexucn.github.io//blog/2025/%E9%9A%8F%E7%AC%94%E5%B9%B4%E5%89%8D%E9%87%8D%E8%AE%BF%E6%97%A7%E5%B1%85/",
+            "image": "https://picsum.photos/seed/feab62d4/600/350",
+            "pubDate": "2025-01-27T23:40:15.000Z",
+            "categories": ["Life", "Thoughts", "Discussion"],
+            "overlayColor": "bg-black",
+            "overlayOpacity": "bg-opacity-70",
+            "isRSS": true
+        },
+        {
+            "id": "rss-zh-3-59542097",
+            "title": "「随笔」2025 年的第一天，说点什么吧",
+            "description": "闲言碎语...",
+            "url": "https://waynexucn.github.io//blog/2025/%E9%9A%8F%E7%AC%9425%E5%B2%81%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/",
+            "image": "https://picsum.photos/seed/e1f277c8/600/350",
+            "pubDate": "2025-01-01T18:00:00.000Z",
+            "categories": ["Life", "Thoughts", "Discussion"],
+            "overlayColor": "bg-black",
+            "overlayOpacity": "bg-opacity-70",
+            "isRSS": true
+        }
+    ],
+    "en": [
+        {
+            "id": "rss-en-0-6d34799c",
+            "title": "macOS System Configuration Notes",
+            "description": "Notes on macOS software configuration and common error solutions...",
+            "url": "https://waynexucn.github.io//en_US/blog/2025/Mac%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/",
+            "image": "https://picsum.photos/seed/a0f72a1d/600/350",
+            "pubDate": "2025-02-16T17:05:53.000Z",
+            "categories": ["Tools", "macOS", "Configuration"],
+            "overlayColor": "bg-black",
+            "overlayOpacity": "bg-opacity-70",
+            "isRSS": true
+        },
+        {
+            "id": "rss-en-1-81d4a35a",
+            "title": "Practical Configuration Notes for Low-Performance Cloud Servers",
+            "description": "Notes on configuring cloud servers...",
+            "url": "https://waynexucn.github.io//en_US/blog/2025/%E4%BD%8E%E9%85%8D%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/",
+            "image": "https://picsum.photos/seed/057bf139/600/350",
+            "pubDate": "2025-02-12T17:05:53.000Z",
+            "categories": ["Tools", "Server", "Configuration"],
+            "overlayColor": "bg-black",
+            "overlayOpacity": "bg-opacity-70",
+            "isRSS": true
+        },
+        {
+            "id": "rss-en-2-6e95bc5b",
+            "title": "Essay: Memories of the Old Home",
+            "description": "Random musings...",
+            "url": "https://waynexucn.github.io//en_US/blog/2025/%E9%9A%8F%E7%AC%94%E5%B9%B4%E5%89%8D%E9%87%8D%E8%AE%BF%E6%97%A7%E5%B1%85/",
+            "image": "https://picsum.photos/seed/e9200ed8/600/350",
+            "pubDate": "2025-01-27T23:40:15.000Z",
+            "categories": ["Life", "Thoughts", "Discussion"],
+            "overlayColor": "bg-black",
+            "overlayOpacity": "bg-opacity-70",
+            "isRSS": true
+        },
+        {
+            "id": "rss-en-3-33020355",
+            "title": "Essay: The First Day of 2025, Some Thoughts",
+            "description": "Random musings...",
+            "url": "https://waynexucn.github.io//en_US/blog/2025/%E9%9A%8F%E7%AC%9425%E5%B2%81%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/",
+            "image": "https://picsum.photos/seed/013046cc/600/350",
+            "pubDate": "2025-01-01T18:00:00.000Z",
+            "categories": ["Life", "Thoughts", "Discussion"],
+            "overlayColor": "bg-black",
+            "overlayOpacity": "bg-opacity-70",
+            "isRSS": true
+        }
+    ]
+}

@@ -1,12 +1,48 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Link from 'next/link';
 import Hero from '../ui/Hero.jsx';
 import WebsiteItem from '../ui/WebsiteItem.jsx';
 import FeaturedPostItem from '../ui/FeaturedPostItem.jsx';
 import { resolveContentHref } from '../../lib/urlUtils.js';
+import { getRSSPostsClient } from '../../lib/getRSSPosts.js';
 
-const Home = ({ content }) => {
+const Home = ({ content, language }) => {
   const { hero, websites, featuredPosts } = content;
+
+  // 直接同步获取 RSS 数据，避免客户端渲染闪烁
+  const rssPosts = getRSSPostsClient(language);
+
+  // 使用 useMemo 优化数据合并逻辑
+  const displayPosts = useMemo(() => {
+    // 合并 RSS 和手动条目
+    const manualItems = featuredPosts.items || [];
+    let posts = [];
+
+    // 检查是否是默认的占位数据
+    const isDefaultRSS = rssPosts.length === 1 && rssPosts[0].id === 'default-1';
+
+    if (rssPosts.length > 0 && !isDefaultRSS) {
+      // 如果有有效的 RSS 数据，优先显示 RSS
+      posts = [...rssPosts];
+
+      // 追加手动条目（去重）
+      const rssUrls = new Set(rssPosts.map(p => p.url));
+      manualItems.forEach(item => {
+        if (!rssUrls.has(item.url)) {
+          posts.push(item);
+        }
+      });
+    } else {
+      // 如果没有 RSS 数据或只有占位符，显示手动条目
+      // 如果手动条目也没有，才显示占位符（如果有的话）
+      if (manualItems.length > 0) {
+        posts = manualItems;
+      } else {
+        posts = rssPosts; // 显示占位符
+      }
+    }
+    return posts;
+  }, [featuredPosts.items, rssPosts]);
 
   return (
     <>
@@ -28,17 +64,9 @@ const Home = ({ content }) => {
           {featuredPosts.title}
         </h2>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8'>
-          {featuredPosts.items.map(item => (
-            <FeaturedPostItem key={item.id || item.title} item={item} />
+          {displayPosts.map(item => (
+            <FeaturedPostItem key={item.id || item.title} item={item} language={language} />
           ))}
-        </div>
-        <div className='flex justify-end mt-8 sm:mt-10'>
-          <Link
-            href={resolveContentHref(featuredPosts.seeAllUrl)}
-            className='text-pink-500 font-medium flex items-center hover:text-pink-600 transition-colors text-base sm:text-lg'
-          >
-            {featuredPosts.seeAllText} <i className='fas fa-arrow-right ml-2'></i>
-          </Link>
         </div>
       </section>
     </>

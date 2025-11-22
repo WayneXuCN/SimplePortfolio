@@ -73,6 +73,16 @@
     },
     "featuredPosts": {
         "title": "Featured Posts",
+        "rss": {
+            "enabled": true,
+            "feeds": [
+                {
+                    "url": "https://waynexucn.github.io/en_US/feed.xml",
+                    "parser": "jekyllFeed"
+                }
+            ],
+            "limit": 4
+        },
         "items": [
             {
                 "id": "how-MyWork-works",
