@@ -1,11 +1,11 @@
 /**
  * LanguageSwitcher.jsx (Astro React Island 版本)
  * 语言切换按钮，用于在 /en/ 和 /zh/ 之间切换
- * 
+ *
  * 更新：
  * - 支持 View Transitions 的 navigate API
  * - 使用 astro:transitions/client 实现平滑的语言切换
- * 
+ *
  * 参考文档：
  * - View Transitions Guide - Trigger navigation
  * - Internationalization (i18n) Routing

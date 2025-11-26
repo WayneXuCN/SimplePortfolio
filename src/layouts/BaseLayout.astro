@@ -2,7 +2,7 @@
 /**
  * BaseLayout.astro
  * 全局布局组件，包含 meta、manifest、GA 条件脚本、主题初始化
- * 
+ *
  * 更新：
  * - 添加 View Transitions 支持（参考：View Transitions Guide）
  * - 添加 transition:animate 指令用于页面切换动画
@@ -33,67 +33,59 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
 ---
 
 <!doctype html>
-<html lang={lang} class="scroll-smooth">
+<html lang={lang} class='scroll-smooth'>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+
     <!-- SEO Meta -->
     <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="author" content={author} />
-    <meta name="keywords" content={keywords} />
-    <meta name="generator" content={Astro.generator} />
-    
+    <meta name='description' content={description} />
+    <meta name='author' content={author} />
+    <meta name='keywords' content={keywords} />
+    <meta name='generator' content={Astro.generator} />
+
     <!-- Open Graph -->
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:type" content="website" />
-    
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:image' content={ogImage} />
+    <meta property='og:type' content='website' />
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
-    
+    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+    <link rel='apple-touch-icon' href='/assets/img/apple-touch-icon.png' />
+
     <!-- Web Manifest -->
-    <link rel="manifest" href="/site.webmanifest" />
-    
+    <link rel='manifest' href='/site.webmanifest' />
+
     <!-- Google Fonts: Noto Sans SC - 预加载并使用 font-display: swap -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel='stylesheet'
+      href='https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap'
     />
-    
+
     <!-- Font Awesome CDN -->
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      crossorigin="anonymous"
+      rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+      crossorigin='anonymous'
     />
-    
+
     <!-- Custom Icons -->
-    <link rel="stylesheet" href="/assets/css/custom-icons.css" />
-    
+    <link rel='stylesheet' href='/assets/css/custom-icons.css' />
+
     <!-- 
-      View Transitions - Astro 官方客户端路由
-      参考文档：View Transitions Guide
-      启用后页面切换将有平滑的过渡动画
-      同时自动启用 prefetch（当 prefetchAll: true 时）
+      View Transitions
     -->
     <ClientRouter />
-    
+
     <!-- 
-      主题初始化脚本 - 必须在 body 渲染前执行
-      避免 FOUC (Flash of Unstyled Content)
-      
-      更新：添加 astro:after-swap 事件监听，
-      确保 View Transitions 页面切换后主题状态正确
-      参考文档：View Transitions - Script behavior
+      主题初始化脚本，必须在 body 渲染前执行
     -->
     <script is:inline>
-      (function() {
+      (function () {
         function getTheme() {
           if (typeof localStorage !== 'undefined') {
             const stored = localStorage.getItem('theme');
@@ -101,50 +93,51 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
           }
           return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         }
-        
+
         function applyTheme() {
           const theme = getTheme();
           document.documentElement.classList.toggle('dark', theme === 'dark');
         }
-        
+
         // 初始化主题
         applyTheme();
-        
+
         // 监听系统主题变化（当没有手动设置时）
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
           if (!localStorage.getItem('theme')) {
             document.documentElement.classList.toggle('dark', e.matches);
           }
         });
-        
+
         // View Transitions：页面切换后重新应用主题
         // astro:after-swap 事件在 DOM 交换完成后触发
         document.addEventListener('astro:after-swap', applyTheme);
       })();
     </script>
-    
-    <!-- Google Analytics (条件注入) -->
-    {gaId && (
-      <>
-        <script is:inline define:vars={{ gaId }}>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', gaId);
-        </script>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
-      </>
-    )}
+
+    <!-- Google Analytics -->
+    {
+      gaId && (
+        <>
+          <script is:inline define:vars={{ gaId }}>
+            window.dataLayer = window.dataLayer || []; const gtag = () => dataLayer.push(arguments);
+            gtag('js', new Date()); gtag('config', gaId);
+          </script>
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
+        </>
+      )
+    }
   </head>
-  
-  <body class="min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+  <body
+    class='min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300'
+  >
     <!-- 
       主内容区域使用 fade 过渡动画
-      transition:animate="fade" 是 Astro 内置动画
     -->
-    <main 
-      class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 max-w-8xl"
-      transition:animate="fade"
+    <main
+      class='container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 max-w-8xl'
+      transition:animate='fade'
     >
       <slot />
     </main>

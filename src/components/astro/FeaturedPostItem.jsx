@@ -23,12 +23,9 @@ const resolveContentHref = href => {
 };
 
 /**
- * FeaturedPostItem (Astro 版本)
+ * FeaturedPostItem
  * - 默认显示：标题 + 第一分类（category）
  * - 悬停时显示：简介(description) 和 发布时间(pubDate)
- * 保持现有 overlay 的视觉风格，仅调整内容布局与过渡效果
- *
- * 使用标准 <img> 替代 next/image，设置 sizes/srcset 保持响应式
  */
 const FeaturedPostItem = ({ item, language = 'zh' }) => {
   const categories = item.categories || (item.category ? [item.category] : []);

@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 
 /**
- * UnderlineEffects (Astro 版本)
+ * UnderlineEffects
  * 为带有 .underline 类的元素添加悬停变色效果
- * 作为 React island 使用时需要 client:load 指令
  */
 const UnderlineEffects = () => {
   useEffect(() => {

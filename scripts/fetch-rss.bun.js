@@ -1,11 +1,11 @@
 #!/usr/bin/env bun
 /**
  * fetch-rss.bun.js
- * Bun 版 RSS 抓取脚本
+ * RSS 抓取脚本
  *
  * 功能：
  * 1. 读取 src/content/i18n/zh.json 和 en.json 中的 featuredPosts.rss 配置
- * 2. 使用 Bun 原生 fetch API 抓取 RSS/Atom feeds
+ * 2. 使用 Bun fetch API 抓取 RSS/Atom feeds
  * 3. 解析 XML 并提取文章信息
  * 4. 生成确定性的随机图片（picsum seed）
  * 5. 输出到 src/data/rss-posts.json

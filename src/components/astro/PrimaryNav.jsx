@@ -1,27 +1,16 @@
 /**
- * PrimaryNav.jsx (Astro React Island 版本)
+ * PrimaryNav.jsx
  * 主导航组件，支持 active 状态高亮
- * 
- * 更新：
- * - 添加 data-astro-prefetch 属性支持官方预获取
- * - 优化路径标准化逻辑
- * 
- * 参考文档：
- * - Prefetch Guide
- * - View Transitions Guide
  */
 import React, { useMemo } from 'react';
 
-/**
- * 标准化路径：移除 .html 扩展名和尾部斜杠
- */
 const normalizePath = href => {
   if (!href) return '/';
   // 处理外部链接和锚点
   if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('#')) {
     return href;
   }
-  // 移除 .html 扩展名（兼容旧配置）
+  // 移除 .html 扩展名
   let normalized = href.replace(/\.html$/i, '');
   // 处理 index
   if (normalized === 'index' || normalized === '/index') {
@@ -109,7 +98,7 @@ const PrimaryNav = ({ nav = [], currentPath = '/', lang = 'en' }) => {
             <a
               href={resolvedHref}
               aria-current={active ? 'page' : undefined}
-              // 为内部链接添加 prefetch 支持（官方推荐）
+              // 为内部链接添加 prefetch 支持
               // 使用 hover 策略：鼠标悬停时预获取
               data-astro-prefetch={!isExternal ? 'hover' : undefined}
               className={`relative group transition-colors py-1 ${

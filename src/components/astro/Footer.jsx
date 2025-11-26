@@ -9,6 +9,7 @@ const SocialLink = ({ link }) => (
     href={link.url}
     className='text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors social-icon text-xl'
     title={link.title || ''}
+    aria-label={link.title || 'Social link'}
     target='_blank'
     rel='noopener noreferrer'
   >
@@ -18,9 +19,10 @@ const SocialLink = ({ link }) => (
         alt={link.title || 'social-icon'}
         className='w-full h-full object-contain'
         loading='lazy'
+        decoding='async'
       />
     ) : (
-      <i className={link.icon}></i>
+      <i className={link.icon} aria-hidden='true'></i>
     )}
   </a>
 );
@@ -58,7 +60,9 @@ const IcpInfo = ({ footer }) => {
       )}
 
       {/* 分隔符 - 仅在 sm 及以上屏幕显示 */}
-      {icp?.text && mps?.text && <span className='hidden sm:inline text-gray-400 select-none'>|</span>}
+      {icp?.text && mps?.text && (
+        <span className='hidden sm:inline text-gray-400 select-none'>|</span>
+      )}
 
       {/* 公安备案 */}
       {mps?.text && mps?.url && (
@@ -68,7 +72,15 @@ const IcpInfo = ({ footer }) => {
           rel='noopener noreferrer'
           className='flex items-center gap-1 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200 whitespace-nowrap'
         >
-          {mps?.logo && <img src={mps.logo} alt='公安备案' className='w-3 h-3 object-contain flex-shrink-0' />}
+          {mps?.logo && (
+            <img
+              src={mps.logo}
+              alt='公安备案'
+              className='w-3 h-3 object-contain flex-shrink-0'
+              loading='lazy'
+              decoding='async'
+            />
+          )}
           <span>{mps.text}</span>
         </a>
       )}
@@ -77,7 +89,7 @@ const IcpInfo = ({ footer }) => {
 };
 
 /**
- * Footer (Astro 版本)
+ * Footer
  * 页脚组件，包含版权信息、备案信息、社交链接
  */
 const Footer = ({ footer }) => {

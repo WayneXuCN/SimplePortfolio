@@ -118,7 +118,7 @@ body {
   transition-delay: 0.1s;
 }
 
-/* 精选文章卡片动画 - 与网站卡片保持一致 */
+/* 文章卡片动画 */
 .featured-post-item {
   transition:
     transform 0.3s ease,

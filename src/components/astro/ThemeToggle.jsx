@@ -1,12 +1,12 @@
 /**
- * ThemeToggle.jsx (Astro React Island 版本)
+ * ThemeToggle.jsx
  * 主题切换按钮，支持 light/dark 模式
  * 使用 localStorage 持久化用户偏好
  */
 import React, { useState, useEffect, useCallback } from 'react';
 
 const ThemeToggle = () => {
-  // 初始状态从 DOM 读取（因为 BaseLayout 的 inline script 已经设置了 dark class）
+  // 初始状态从 DOM 读取
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
       return document.documentElement.classList.contains('dark') ? 'dark' : 'light';

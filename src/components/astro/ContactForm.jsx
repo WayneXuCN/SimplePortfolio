@@ -2,9 +2,8 @@ import React, { useRef, useState, useCallback, useMemo, useEffect } from 'react'
 import emailjs from '@emailjs/browser';
 
 /**
- * ContactForm (Astro 版本)
+ * ContactForm
  * 联系表单组件，使用 EmailJS 发送邮件
- * 作为 React island 使用时需要 client:load 指令
  *
  * 环境变量（Astro 使用 PUBLIC_ 前缀）：
  * - PUBLIC_EMAILJS_SERVICE_ID
@@ -74,7 +73,6 @@ const ContactForm = ({ content, emailAddress }) => {
     e.preventDefault();
     if (status === 'sending') return;
 
-    // Astro 使用 PUBLIC_ 前缀的环境变量
     const serviceId = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;

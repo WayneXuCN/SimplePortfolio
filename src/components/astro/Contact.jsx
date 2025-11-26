@@ -3,9 +3,8 @@ import emailjs from '@emailjs/browser';
 import Hero from './Hero.jsx';
 
 /**
- * Contact (Astro 版本)
+ * Contact
  * 联系页面完整组件，包含邮箱卡片、社交链接和联系表单
- * 作为 React island 使用时需要 client:load 指令
  *
  * 环境变量（Astro 使用 PUBLIC_ 前缀）：
  * - PUBLIC_EMAILJS_SERVICE_ID

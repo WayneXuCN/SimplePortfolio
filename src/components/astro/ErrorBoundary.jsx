@@ -1,9 +1,8 @@
 import React from 'react';
 
 /**
- * ErrorBoundary (Astro 版本)
+ * ErrorBoundary
  * 错误边界组件，捕获子组件的 JavaScript 错误
- * 作为 React island 使用时需要 client:load 指令
  */
 class ErrorBoundary extends React.Component {
   constructor(props) {
