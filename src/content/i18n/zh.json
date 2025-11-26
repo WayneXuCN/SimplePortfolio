@@ -94,7 +94,7 @@
             "enabled": true,
             "feeds": [
                 {
-                    "url": "https://waynexucn.github.io/feed.xml",
+                    "url": "https://lab.wenjiexu.site/feed.xml",
                     "parser": "jekyllFeed"
                 }
             ],

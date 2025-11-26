@@ -27,11 +27,10 @@
 </p>
 
 <p align="center">
-  <a href="#-features">Features</a> •
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-configuration">Configuration</a> •
-  <a href="#-customization">Customization</a> •
-  <a href="#-deployment">Deployment</a>
+  <a href="#features">Features</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#configuration">Configuration</a> •
+  <a href="#customization">Customization</a>
 </p>
 
 <p align="center">
@@ -40,22 +39,19 @@
 
 ---
 
-## ✨ Features
+## Features
 
 | Feature | Description |
 |---------|-------------|
-| 🌍 **i18n Ready** | Built-in internationalization with Astro's native i18n routing and Content Collections |
-| 🌙 **Dark Mode** | Automatic theme switching with system preference detection and localStorage persistence |
-| 📱 **Responsive** | Mobile-first design that looks great on all devices |
-| 📡 **RSS Aggregation** | Fetch and display posts from external RSS/Atom feeds |
-| 📧 **Contact Form** | Pre-configured EmailJS integration for functional contact forms |
-| 📊 **Analytics** | Optional Google Analytics 4 integration |
-| ⚡ **Performance** | 100/100 Lighthouse scores with static site generation |
-| 🎨 **Tailwind CSS** | Utility-first styling with full dark mode support |
-| 🏝️ **Islands Architecture** | Interactive React components with minimal JavaScript |
-| 🧪 **E2E Testing** | Playwright test suite included |
+| **Internationalization** | Built-in internationalization with Astro's native i18n routing and Content Collections |
+| **Dark Mode** | Automatic theme switching with system preference detection and localStorage persistence |
+| **Responsive Design** | Mobile-first design that looks great on all devices |
+| **RSS Aggregation** | Fetch and display posts from external RSS/Atom feeds |
+| **Contact Form** | Pre-configured EmailJS integration for functional contact forms |
+| **Analytics** | Optional Google Analytics 4 integration |
+| **Islands Architecture** | Interactive React components with minimal JavaScript |
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -85,7 +81,7 @@ bun run build
 
 Output is generated in the `dist/` directory, ready for deployment to any static hosting platform.
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 starter-theme/
@@ -121,7 +117,7 @@ starter-theme/
 └── package.json
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -191,7 +187,7 @@ Configure RSS aggregation in your locale JSON:
 }
 ```
 
-## 🎨 Customization
+## Customization
 
 ### Adding a New Language
 
@@ -241,7 +237,7 @@ All interactive components are React islands in `src/components/astro/`:
 | `ThemeToggle.jsx` | Dark/light mode toggle |
 | `LanguageSwitcher.jsx` | Language selector |
 
-## 🚢 Deployment
+## Deployment
 
 The theme generates static HTML files that can be deployed anywhere:
 
@@ -273,7 +269,7 @@ Connect your repository and set:
 - **Build command**: `bun run build`
 - **Output directory**: `dist`
 
-## 📜 Scripts
+## Scripts
 
 | Command | Description |
 |---------|-------------|
@@ -281,38 +277,17 @@ Connect your repository and set:
 | `bun run build` | Build for production |
 | `bun run preview` | Preview production build |
 | `bun run fetch:rss` | Fetch RSS feeds |
-| `bun run test` | Run Playwright tests |
 | `bun run format` | Format code with Prettier |
 
-## 🧪 Testing
-
-```bash
-# Run all tests
-bun run test
-
-# Run tests in headed mode
-bun run test:headed
-
-# Run tests with UI
-bun run test:ui
-```
-
-## 📊 Lighthouse Scores
-
-<p align="center">
-  <img src="public/assets/img/desktop_pagespeed.png" alt="Lighthouse Desktop Score" width="600" />
-</p>
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: [Astro](https://astro.build/) 5.x
 - **UI**: [React](https://react.dev/) 19.x
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) 3.x
 - **Runtime**: [Bun](https://bun.sh/) 1.x
-- **Testing**: [Playwright](https://playwright.dev/)
 - **Email**: [EmailJS](https://www.emailjs.com/)
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) before submitting a PR.
 
@@ -322,12 +297,12 @@ Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
 
 ---
 
 <p align="center">
-  Made with ❤️ by <a href="https://github.com/WayneXuCN">Wenjie Xu</a>
+  Made with love by <a href="https://github.com/WayneXuCN">Wenjie Xu</a>
 </p>

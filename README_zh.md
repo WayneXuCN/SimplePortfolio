@@ -5,7 +5,7 @@
 <h1 align="center">Starter Theme</h1>
 
 <p align="center">
-  <strong>基于 Astro 5 构建的现代极简个人主页主题</strong>
+  <strong>基于 Astro 5 构建的现代极简个人主页主题</strong>g
 </p>
 
 <p align="center">
@@ -27,11 +27,10 @@
 </p>
 
 <p align="center">
-  <a href="#-特性">特性</a> •
-  <a href="#-快速开始">快速开始</a> •
-  <a href="#️-配置">配置</a> •
-  <a href="#-自定义">自定义</a> •
-  <a href="#-部署">部署</a>
+  <a href="#特性">特性</a> •
+  <a href="#快速开始">快速开始</a> •
+  <a href="#配置">配置</a> •
+  <a href="#自定义">自定义</a>
 </p>
 
 <p align="center">
@@ -40,22 +39,19 @@
 
 ---
 
-## ✨ 特性
+## 特性
 
 | 特性 | 说明 |
 |------|------|
-| 🌍 **国际化支持** | 基于 Astro 原生 i18n 路由和内容集合的多语言支持 |
-| 🌙 **深色模式** | 自动检测系统偏好，支持 localStorage 持久化 |
-| 📱 **响应式设计** | 移动优先，完美适配各种设备 |
-| 📡 **RSS 聚合** | 从外部 RSS/Atom 源获取并展示文章 |
-| 📧 **联系表单** | 预配置 EmailJS 集成，开箱即用 |
-| 📊 **数据分析** | 可选的 Google Analytics 4 集成 |
-| ⚡ **极致性能** | 静态站点生成，Lighthouse 全项满分 |
-| 🎨 **Tailwind CSS** | 原子化 CSS，完整支持深色模式 |
-| 🏝️ **群岛架构** | React 组件按需加载，最小化 JS 体积 |
-| 🧪 **E2E 测试** | 内置 Playwright 测试套件 |
+| **国际化支持** | 基于 Astro 原生 i18n 路由和内容集合的多语言支持 |
+| **深色模式** | 自动检测系统偏好，支持 localStorage 持久化 |
+| **响应式设计** | 、适配各种设备 |
+| **RSS 聚合** | 从外部 RSS/Atom 源获取并展示文章 |
+| **联系表单** | 预配置 EmailJS 集成，开箱即用 |
+| **数据分析** | 可选的 Google Analytics 4 集成 |
+| **群岛架构** | React 组件按需加载，最小化 JS 体积 |
 
-## 🚀 快速开始
+## 快速开始
 
 ### 环境要求
 
@@ -85,7 +81,7 @@ bun run build
 
 输出文件生成在 `dist/` 目录，可部署到任意静态托管平台。
 
-## 📁 项目结构
+## 项目结构
 
 ```text
 starter-theme/
@@ -121,7 +117,7 @@ starter-theme/
 └── package.json
 ```
 
-## ⚙️ 配置
+## 配置
 
 ### 环境变量
 
@@ -191,7 +187,7 @@ export default defineConfig({
 }
 ```
 
-## 🎨 自定义
+## 自定义
 
 ### 添加新语言
 
@@ -242,39 +238,7 @@ export default defineConfig({
 | `LanguageSwitcher.jsx` | 语言选择器 |
 | `PrimaryNav.jsx` | 主导航 |
 
-## 🚢 部署
-
-主题生成静态 HTML 文件，可部署到任意平台：
-
-### Vercel
-
-```bash
-npx vercel
-```
-
-### Netlify
-
-```bash
-npx netlify deploy --prod --dir=dist
-```
-
-### GitHub Pages
-
-使用内置的 GitHub Actions 工作流，或手动部署：
-
-```bash
-bun run build
-# 上传 dist/ 到 gh-pages 分支
-```
-
-### Cloudflare Pages
-
-连接仓库并设置：
-
-- **构建命令**：`bun run build`
-- **输出目录**：`dist`
-
-## 📜 脚本命令
+## 脚本命令
 
 | 命令 | 说明 |
 |------|------|
@@ -282,38 +246,17 @@ bun run build
 | `bun run build` | 构建生产版本 |
 | `bun run preview` | 预览生产构建 |
 | `bun run fetch:rss` | 抓取 RSS 订阅 |
-| `bun run test` | 运行 Playwright 测试 |
 | `bun run format` | 使用 Prettier 格式化代码 |
 
-## 🧪 测试
-
-```bash
-# 运行所有测试
-bun run test
-
-# 以有头模式运行测试
-bun run test:headed
-
-# 使用 UI 运行测试
-bun run test:ui
-```
-
-## 📊 Lighthouse 评分
-
-<p align="center">
-  <img src="public/assets/img/desktop_pagespeed.png" alt="Lighthouse 桌面端评分" width="600" />
-</p>
-
-## 🛠️ 技术栈
+## 技术栈
 
 - **框架**：[Astro](https://astro.build/) 5.x
 - **UI**：[React](https://react.dev/) 19.x
 - **样式**：[Tailwind CSS](https://tailwindcss.com/) 3.x
 - **运行时**：[Bun](https://bun.sh/) 1.x
-- **测试**：[Playwright](https://playwright.dev/)
 - **邮件**：[EmailJS](https://www.emailjs.com/)
 
-## 🤝 贡献指南
+## 贡献指南
 
 欢迎贡献！提交 PR 前请阅读 [贡献指南](CONTRIBUTING.md)。
 
@@ -323,12 +266,12 @@ bun run test:ui
 4. 推送到分支（`git push origin feature/amazing-feature`）
 5. 发起 Pull Request
 
-## 📄 许可证
+## 许可证
 
 本项目基于 [MIT 许可证](LICENSE) 开源。
 
 ---
 
 <p align="center">
-  Made with ❤️ by <a href="https://github.com/WayneXuCN">Wenjie Xu</a>
+  Made with love by <a href="https://github.com/WayneXuCN">Wenjie Xu</a>
 </p>

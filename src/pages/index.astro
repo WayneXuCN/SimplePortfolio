@@ -1,36 +1,53 @@
 ---
 /**
- * 根路径重定向页面
+ * /index.astro - 根路径首页
  *
  * 说明：
- * - 主要重定向逻辑已移至 src/middleware.ts（官方推荐方式）
- * - 此页面作为 fallback，用于静态构建时生成 index.html
- * - 使用 Astro.redirect() 进行服务端重定向
+ * - 直接渲染默认语言（中文）的首页内容
+ * - 设置 redirectToDefaultLocale: false 后，/ 不再重定向
+ * - canonical URL 指向 /zh/ 以避免 SEO 重复内容问题
  *
  * 参考文档：
- * - Middleware Guide
  * - Internationalization (i18n) Routing
  */
-import { getRelativeLocaleUrl } from 'astro:i18n';
-import { defaultLocale } from '../lib/i18n';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeaderBar from '../components/astro/HeaderBar.jsx';
+import Home from '../components/astro/Home.jsx';
+import UnderlineEffects from '../components/astro/UnderlineEffects.jsx';
+import { getI18n, type Locale } from '../lib/i18n';
+import rssData from '../data/rss-posts.json';
 
-// 获取默认语言的 URL
-const redirectUrl = getRelativeLocaleUrl(defaultLocale);
+// 使用默认语言
+const lang: Locale = 'zh';
 
-// 静态构建时，生成带重定向的 HTML
-// 服务端渲染时，由 middleware 处理重定向
+// 从内容集合获取翻译数据
+const translations = await getI18n(lang);
+const { site, nav, header } = translations;
+
+// 当前路径用于导航高亮
+const currentPath = Astro.url.pathname;
+
+// 获取对应语言的 RSS 帖子
+const rssPosts = rssData[lang] || [];
+
+// canonical URL 指向带语言前缀的页面
+const canonicalUrl = new URL('/zh/', Astro.site);
 ---
 
-<!doctype html>
-<html lang={defaultLocale}>
-  <head>
-    <meta charset='UTF-8' />
-    <!-- 静态构建 fallback：使用 meta refresh 重定向 -->
-    <meta http-equiv='refresh' content={`0;url=${redirectUrl}`} />
-    <link rel='canonical' href={redirectUrl} />
-    <title>Redirecting...</title>
-  </head>
-  <body>
-    <p>Redirecting to <a href={redirectUrl}>{redirectUrl}</a>...</p>
-  </body>
-</html>
+<BaseLayout
+  title={site.title}
+  description={site.description}
+  author={site.author}
+  keywords={site.keywords}
+  lang={lang}
+  canonicalUrl={canonicalUrl.href}
+>
+  <!-- HeaderBar 作为 React island，立即加载 -->
+  <HeaderBar client:load header={header} nav={nav} currentPath={currentPath} lang={lang} />
+
+  <!-- Home 组件包含 Hero、Websites、Featured Posts 和 Footer -->
+  <Home client:load translations={translations} language={lang} rssPosts={rssPosts} />
+
+  <!-- 下划线悬停效果 -->
+  <UnderlineEffects client:load />
+</BaseLayout>

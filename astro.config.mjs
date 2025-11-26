@@ -24,7 +24,16 @@ export default defineConfig({
     routing: {
       // 默认语言也添加前缀，如 /zh/, /en/
       prefixDefaultLocale: true,
+      // 禁用根路径自动重定向，让 / 直接显示首页内容
+      redirectToDefaultLocale: false,
     },
+  },
+
+  // 自定义重定向配置
+  // 覆盖 Astro i18n 默认的 404 重定向行为
+  redirects: {
+    // 让 /404 直接显示中文 404 页面而不是重定向
+    // 需要在服务器端（OpenResty/Nginx）配置 error_page
   },
   
   // Prefetch 预获取配置

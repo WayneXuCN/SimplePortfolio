@@ -17,6 +17,7 @@ interface Props {
   keywords?: string;
   lang?: string;
   ogImage?: string;
+  canonicalUrl?: string;
 }
 
 const {
@@ -26,6 +27,7 @@ const {
   keywords = '',
   lang = 'en',
   ogImage = '/assets/img/og-image.png',
+  canonicalUrl,
 } = Astro.props;
 
 // GA ID 从环境变量获取（PUBLIC_ 前缀表示客户端可用）
@@ -44,6 +46,7 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
     <meta name='author' content={author} />
     <meta name='keywords' content={keywords} />
     <meta name='generator' content={Astro.generator} />
+    {canonicalUrl && <link rel='canonical' href={canonicalUrl} />}
 
     <!-- Open Graph -->
     <meta property='og:title' content={title} />

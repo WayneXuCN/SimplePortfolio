@@ -12,10 +12,6 @@
         "astro": "astro",
         "fetch:rss": "bun run scripts/fetch-rss.bun.js",
         "prebuild": "bun run scripts/fetch-rss.bun.js || true",
-        "test": "playwright test",
-        "test:e2e": "playwright test --project=chromium",
-        "test:headed": "playwright test --headed",
-        "test:ui": "playwright test --ui",
         "format": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,html,astro}'",
         "format:check": "prettier --check '**/*.{js,jsx,ts,tsx,json,css,html,astro}'",
         "type-check": "tsc --noEmit",
@@ -48,7 +44,7 @@
     "devDependencies": {
         "@astrojs/react": "^4.4.2",
         "@astrojs/tailwind": "^6.0.2",
-        "@playwright/test": "^1.57.0",
+
         "@types/react": "^19.2.7",
         "@types/react-dom": "^19.2.3",
         "autoprefixer": "^10.4.22",

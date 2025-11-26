@@ -1,8 +1,10 @@
 /**
  * src/middleware.ts
  * 功能：
- * 1. 根路径重定向到默认语言
- * 2. 语言检测与路由验证
+ * 1. 语言检测与路由验证
+ * 2. 无效语言路径重定向到默认语言
+ *
+ * 注意：根路径 "/" 不再在此处重定向，由 src/pages/index.astro 直接处理
  */
 import { defineMiddleware } from 'astro:middleware';
 import { defaultLocale, isValidLocale } from './lib/i18n';
@@ -20,8 +22,9 @@ function extractLocaleFromPath(pathname: string): string | null {
  *
  * 处理逻辑：
  * 1. 静态资源直接放行
- * 2. 根路径 "/" 重定向到默认语言
+ * 2. 根路径直接放行（由 index.astro 处理）
  * 3. 验证语言路径有效性
+ * 4. 无效语言路径重定向到默认语言
  */
 export const onRequest = defineMiddleware(async (context, next) => {
   const { url, redirect } = context;
@@ -41,10 +44,9 @@ export const onRequest = defineMiddleware(async (context, next) => {
     return next();
   }
 
-  // 2. 根路径重定向到默认语言
-  // 官方推荐：使用 redirect() 而非 meta refresh
-  if (pathname === '/') {
-    return redirect(`/${defaultLocale}/`, 302);
+  // 2. 根路径直接放行，由 index.astro 渲染
+  if (pathname === '/' || pathname === '') {
+    return next();
   }
 
   // 3. 提取并验证语言代码

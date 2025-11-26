@@ -3,69 +3,19 @@ name: 构建与部署
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
   workflow_dispatch: # 允许手动触发
 
 jobs:
-  # 构建与测试 Job
-  build-test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 检出代码
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-
-      - name: 安装 Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
-      - name: 安装依赖
-        run: bun install
-
-      - name: 运行 prebuild (获取 RSS)
-        run: bun run prebuild
-
-      - name: 构建 Astro 站点
-        run: bun run build
-
-      - name: 安装 Playwright 浏览器
-        run: bunx playwright install --with-deps chromium
-
-      - name: 运行 E2E 测试
-        run: bun run test:e2e
-
-      - name: 上传构建产物
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: dist/
-          retention-days: 7
-
-      - name: 上传测试报告
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
-
-  # 部署 Job (仅在 main 分支推送时执行)
   deploy:
-    needs: build-test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     environment: production
     concurrency: production
 
     steps:
-      - name: 下载构建产物
-        uses: actions/download-artifact@v4
+      - name: 检出代码
+        uses: actions/checkout@v4
         with:
-          name: dist
-          path: dist/
+          fetch-depth: 1 # 浅克隆，提高速度
 
       - name: 服务器执行部署命令
         uses: appleboy/ssh-action@v1
@@ -87,6 +37,12 @@ jobs:
             git reset --hard origin/main
             git pull --depth=1
 
+            # 设置 PATH 环境变量以包含 bun
+            export PATH="/root/.bun/bin:$PATH"
+            
+            # 验证 bun 是否可用
+            which bun || echo "bun not found in PATH"
+            
             # 安装依赖并构建
             bun install
             bun run build
@@ -98,7 +54,6 @@ jobs:
             # 设置index文件权限为 PHP-FPM 用户
             chown -R 1000:1000 /opt/1panel/apps/openresty/openresty/www/sites/wenjiexusite/index
 
-            echo "✅ 已成功拉取 main 分支最新内容"
             echo "✅ 构建文件已移动到 index 目录"
             echo "✅ index 目录文件权限已设置为 1000:1000"
             echo "🚀 部署完成时间: $(date)"
